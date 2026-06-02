@@ -22,4 +22,4 @@ These are the release notes for all published versions updates. →
 - ## Beta
   Release notes for the beta versions that have been published.
  - #### Version 1.1.0.beta3
-  1. Add greeting.It can show your username.
+  1. Add greeting. It can show your username.
