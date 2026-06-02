@@ -19,6 +19,8 @@ namespace GarbageCleaner
         private const int SHERB_NOCONFIRMATION = 0x00000001;
         private const int SHERB_NOPROGRESSUI = 0x00000002;
         private const int SHERB_NOSOUND = 0x00000004;
+        private const int V = 100;
+
         public Form1()
         {
             InitializeComponent();
@@ -119,6 +121,7 @@ namespace GarbageCleaner
             }
             finally
             {
+                progressBar1.Value = V;
                 btnScan.Enabled = true;
                 btnCancel.Enabled = false;
             }
@@ -207,7 +210,7 @@ namespace GarbageCleaner
         }
 
         // ==================== 清理垃圾 ====================
-        private async void btnClean_Click(object sender, EventArgs e)
+        private async void btnClean_Click_1(object sender, EventArgs e)
         {
             if (_garbageFiles.Count == 0)
             {
@@ -230,6 +233,7 @@ namespace GarbageCleaner
             {
                 await Task.Run(() => CleanGarbage(_cts.Token), _cts.Token);
                 lblStatus.Text = "清理完成.";
+                progressBar1.Value = V;
                 MessageBox.Show("垃圾清理完成！", "完成");
                 // 重新扫描
                 btnScan.PerformClick();
@@ -243,6 +247,28 @@ namespace GarbageCleaner
                 btnScan.Enabled = true;
                 btnCancel.Enabled = false;
             }
+        }
+
+        private void btnSelectAll_Click(object sender, EventArgs e)
+        {
+            chkTempFiles.Checked = true;
+            chkRecycleBin.Checked = true;
+            chkPrefetch.Checked = true;
+            chkRecentDocs.Checked = true;
+            chkEventLogs.Checked = true;
+            chkEdgeCache.Checked = true;
+            chkWindowsUpdate.Checked = true;
+        }
+
+        private void btnDeselectAll_Click(object sender, EventArgs e)
+        {
+            chkTempFiles.Checked = false;
+            chkRecycleBin.Checked = false;
+            chkPrefetch.Checked = false;
+            chkRecentDocs.Checked = false;
+            chkEventLogs.Checked = false;
+            chkEdgeCache.Checked = false;
+            chkWindowsUpdate.Checked = false;
         }
 
         private void CleanGarbage(CancellationToken ct)
@@ -364,11 +390,11 @@ namespace GarbageCleaner
         }
 
         // ==================== 取消操作 ====================
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void btnCancel_Click_1(object sender, EventArgs e)
         {
-            if (_cts != null)
-                _cts.Cancel();
+            _cts?.Cancel();
             btnCancel.Enabled = false;
+            progressBar1.Value = V;
             lblStatus.Text = "正在取消...";
         }
 
@@ -395,14 +421,14 @@ namespace GarbageCleaner
             lblAuthor.Text = "作者：YuMoo_";
 
             // 联系方式
-            linkEmail.Text = "clonel@163.com";
+            var linkEmail = "clonel@163.com";
         }
 
         private void linkEmail_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
             {
-                FileName = $"mailto:{linkEmail.Text}",
+                FileName = $"mailto:{linkEmail}",
                 UseShellExecute = true
             });
         }
@@ -421,6 +447,7 @@ namespace GarbageCleaner
         }
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageMain = new System.Windows.Forms.TabPage();
             this.listBoxResult = new System.Windows.Forms.ListBox();
@@ -528,6 +555,7 @@ namespace GarbageCleaner
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "取消";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
             // btnClean
             // 
@@ -538,8 +566,7 @@ namespace GarbageCleaner
             this.btnClean.TabIndex = 2;
             this.btnClean.Text = "清理垃圾";
             this.btnClean.UseVisualStyleBackColor = true;
-            EventHandler btnClean_Click = this.btnClean_Click;
-            this.btnClean.Click += new System.EventHandler(btnClean_Click);
+            this.btnClean.Click += new System.EventHandler(this.btnClean_Click_1);
             // 
             // btnScan
             // 
@@ -589,6 +616,7 @@ namespace GarbageCleaner
             this.btnDeselectAll.TabIndex = 8;
             this.btnDeselectAll.Text = "全不选";
             this.btnDeselectAll.UseVisualStyleBackColor = true;
+            this.btnDeselectAll.Click += new System.EventHandler(this.btnDeselectAll_Click);
             // 
             // btnSelectAll
             // 
@@ -598,6 +626,7 @@ namespace GarbageCleaner
             this.btnSelectAll.TabIndex = 7;
             this.btnSelectAll.Text = "全选";
             this.btnSelectAll.UseVisualStyleBackColor = true;
+            this.btnSelectAll.Click += new System.EventHandler(this.btnSelectAll_Click);
             // 
             // chkWindowsUpdate
             // 
@@ -698,10 +727,10 @@ namespace GarbageCleaner
             this.linkEmail.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkEmail.Location = new System.Drawing.Point(300, 260);
             this.linkEmail.Name = "linkEmail";
-            this.linkEmail.Size = new System.Drawing.Size(154, 24);
+            this.linkEmail.Size = new System.Drawing.Size(208, 24);
             this.linkEmail.TabIndex = 6;
             this.linkEmail.TabStop = true;
-            this.linkEmail.Text = "clonel@163.com";
+            this.linkEmail.Text = "邮箱：clonel@163.com";
             // 
             // lblAuthor
             // 
@@ -717,27 +746,27 @@ namespace GarbageCleaner
             this.lblCopyright.AutoSize = true;
             this.lblCopyright.Location = new System.Drawing.Point(300, 160);
             this.lblCopyright.Name = "lblCopyright";
-            this.lblCopyright.Size = new System.Drawing.Size(320, 24);
+            this.lblCopyright.Size = new System.Drawing.Size(330, 24);
             this.lblCopyright.TabIndex = 4;
-            this.lblCopyright.Text = "© 2026 YuMoo_. All rights reserved.";
+            this.lblCopyright.Text = "© 2026 YuMoo_.   All rights reserved.";
             // 
             // lblUpdateDate
             // 
             this.lblUpdateDate.AutoSize = true;
             this.lblUpdateDate.Location = new System.Drawing.Point(300, 120);
             this.lblUpdateDate.Name = "lblUpdateDate";
-            this.lblUpdateDate.Size = new System.Drawing.Size(220, 24);
+            this.lblUpdateDate.Size = new System.Drawing.Size(262, 24);
             this.lblUpdateDate.TabIndex = 3;
-            this.lblUpdateDate.Text = "更新日期：2026年6月1日";
+            this.lblUpdateDate.Text = "更新日期：YYYY年MM月DD日";
             // 
             // lblVersion
             // 
             this.lblVersion.AutoSize = true;
             this.lblVersion.Location = new System.Drawing.Point(300, 90);
             this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(209, 24);
+            this.lblVersion.Size = new System.Drawing.Size(173, 24);
             this.lblVersion.TabIndex = 2;
-            this.lblVersion.Text = "版本：v1.1.0 特别设计版";
+            this.lblVersion.Text = "版本：v1.1.1 定制版";
             // 
             // lblAppName
             // 
@@ -773,22 +802,24 @@ namespace GarbageCleaner
             // lblNotice
             // 
             this.lblNotice.AutoSize = true;
-            this.lblNotice.Location = new System.Drawing.Point(170, 150);
+            this.lblNotice.Location = new System.Drawing.Point(200, 150);
             this.lblNotice.Name = "lblNotice";
-            this.lblNotice.Size = new System.Drawing.Size(316, 24);
+            this.lblNotice.Size = new System.Drawing.Size(280, 24);
             this.lblNotice.TabIndex = 0;
-            this.lblNotice.Text = "该特别设计版无广告，感谢使用及支持";
+            this.lblNotice.Text = "该定制版无广告，感谢使用及支持";
             // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(678, 464);
             this.Controls.Add(this.tabControl1);
+            this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(700, 520);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Windows系统垃圾清理工具";
+            this.Text = " Windows 系统垃圾清理工具";
             this.tabControl1.ResumeLayout(false);
             this.tabPageMain.ResumeLayout(false);
             this.tabPageMain.PerformLayout();

@@ -1,0 +1,12 @@
+C:\Users\YuMoo_\OneDrive\Works\Program\GarbageCleaner\GarbageCleaner\bin\Release\GarbageCleaner.exe.config
+C:\Users\YuMoo_\OneDrive\Works\Program\GarbageCleaner\GarbageCleaner\bin\Release\GarbageCleaner.exe
+C:\Users\YuMoo_\OneDrive\Works\Program\GarbageCleaner\GarbageCleaner\bin\Release\GarbageCleaner.pdb
+C:\Users\YuMoo_\OneDrive\Works\Program\GarbageCleaner\GarbageCleaner\obj\Release\GarbageCleaner.csproj.AssemblyReference.cache
+C:\Users\YuMoo_\OneDrive\Works\Program\GarbageCleaner\GarbageCleaner\obj\Release\GarbageCleaner.Form1.resources
+C:\Users\YuMoo_\OneDrive\Works\Program\GarbageCleaner\GarbageCleaner\obj\Release\GarbageCleaner.Properties.Resources.resources
+C:\Users\YuMoo_\OneDrive\Works\Program\GarbageCleaner\GarbageCleaner\obj\Release\GarbageCleaner.csproj.GenerateResource.cache
+C:\Users\YuMoo_\OneDrive\Works\Program\GarbageCleaner\GarbageCleaner\obj\Release\GarbageCleaner.csproj.CoreCompileInputs.cache
+C:\Users\YuMoo_\OneDrive\Works\Program\GarbageCleaner\GarbageCleaner\obj\Release\GarbageCleaner.csproj.Fody.CopyLocal.cache
+C:\Users\YuMoo_\OneDrive\Works\Program\GarbageCleaner\GarbageCleaner\obj\Release\GarbageCleaner.csproj.Fody.RuntimeCopyLocal.cache
+C:\Users\YuMoo_\OneDrive\Works\Program\GarbageCleaner\GarbageCleaner\obj\Release\GarbageCleaner.exe
+C:\Users\YuMoo_\OneDrive\Works\Program\GarbageCleaner\GarbageCleaner\obj\Release\GarbageCleaner.pdb
