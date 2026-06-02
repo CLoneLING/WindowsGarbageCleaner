@@ -10,8 +10,8 @@ These are the release notes for all published version updates. →
 
 - ## Release
 Release notes for the released version have been published.
- - ### ~~Version 1.0.0~~ ~Deleted~
-  1. Basic design script.
+ - ### ~~Version 1.0.0~~^Deleted^
+  1. ~~Basic design script.~~
  - ### Version 1.1.0
   1. Based on .NET Framework 4.8, the objects have been refactored from batch scripts to C#.
   2. All Designs rebuild.
