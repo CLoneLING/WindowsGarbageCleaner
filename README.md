@@ -6,10 +6,13 @@ It is a tool that can clean the garbage files from Windows system,like temp ,pre
 
 ## What has been updated?
 
+These are the release notes for all published version updates. →
+
 - ## Release
- - ### Version 1.0.0
-  1. Basic design script
- - ### Version 1.1.0.beta3
+Release notes for the released version have been published.
+ - ### --Version 1.0.0--
+  1. Basic design script.
+ - ### Version 1.1.0
   1. Based on .NET Framework 4.8, the objects have been refactored from batch scripts to C#.
   2. All Designs rebuild.
-  3. Create new UI
+  3. Create new UI.
