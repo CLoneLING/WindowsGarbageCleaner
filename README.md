@@ -8,7 +8,8 @@ It is a tool that can clean the garbage files from Windows system,like temp ,pre
 
 These are the release notes for all published version updates. →
 
-- ## Release<br> #### Release notes for the released version have been published.
+- ## Release
+  Release notes for the released version have been published.
  - ### ~~Version 1.0.0~~
   1. ~~Basic design script.~~<br>Deleted.
  - ### Version 1.1.0
