@@ -1,6 +1,6 @@
 ![icon](GarbageCleaner/GarbageCleaner/favicon.ico) 
 # Windows Garbage Cleaner
-[![Passing](https://img.shields.io/badge/Cleaner-passing-green/?style=for-the-badge&logo=github)](https://github.com/CLoneLING/WindowsGarbageCleaner)[![Support](https://img.shields.io/badge/Windows-supporting-green/?style=for-the-badge&logo=windows)](https://github.com/CLoneLING/WindowsGarbageCleaner)
+[![Passing](https://img.shields.io/badge/Cleaner-passing-green/?style=for-the-badge&logo=github)](https://github.com/CLoneLING/WindowsGarbageCleaner)[![Support](https://img.shields.io/badge/Windows-supporting-green/?style=for-the-badge&logo=https://www.svgrepo.com/show/448239/microsoft.svg)](https://github.com/CLoneLING/WindowsGarbageCleaner)
 
 It is a tool that can clean the garbage files from Windows system,like temp ,prefetch cache and so on.
 
