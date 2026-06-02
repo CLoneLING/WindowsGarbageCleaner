@@ -11,9 +11,9 @@ These are the release notes for all published versions updates. →
 
 - ## Release
   Release notes for the released versions that have been published.
- - ### ~~Version 1.0.0~~
+ - #### ~~Version 1.0.0~~
   1. ~~Basic design script.~~<br>Deleted.
- - ### Version 1.1.0
+ - #### Version 1.1.0
   1. Based on .NET Framework 4.8, the objects have been refactored from batch scripts to C#.
   2. Create new UI.
   3. Update icon.
@@ -21,5 +21,5 @@ These are the release notes for all published versions updates. →
 
 - ## Beta
   Release notes for the beta versions that have been published.
- - ### Version 1.1.0.beta3
-  1.Add greeting.It can show your username.
+ - #### Version 1.1.0.beta3
+  1. Add greeting.It can show your username.
