@@ -437,13 +437,13 @@ namespace GarbageCleaner
         private void PictureBoxDonate_Click(object sender, EventArgs e)
         {
             // 爱发电主页
-            System.Diagnostics.Process.Start("https://ifdian.com/a/yumoo");
+            System.Diagnostics.Process.Start("https://ifdian.net/a/yumoo");
         }
 
-        private void LblDonateLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void lblDonateLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             // 爱发电主页
-            System.Diagnostics.Process.Start("https://ifdian.com/a/yumoo");
+            System.Diagnostics.Process.Start("https://ifdian.net/a/yumoo");
         }
         private void InitializeComponent()
         {
@@ -476,13 +476,17 @@ namespace GarbageCleaner
             this.lblAppName = new System.Windows.Forms.Label();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.tabPageDonate = new System.Windows.Forms.TabPage();
-            this.lblNotice = new System.Windows.Forms.Label();
+            this.lblDonateLink = new System.Windows.Forms.LinkLabel();
+            this.lblDonateDesc = new System.Windows.Forms.Label();
+            this.PictureBoxDonate = new System.Windows.Forms.PictureBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tabControl1.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
             this.tabPageAbout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.tabPageDonate.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxDonate)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -764,9 +768,9 @@ namespace GarbageCleaner
             this.lblVersion.AutoSize = true;
             this.lblVersion.Location = new System.Drawing.Point(300, 90);
             this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(173, 24);
+            this.lblVersion.Size = new System.Drawing.Size(114, 24);
             this.lblVersion.TabIndex = 2;
-            this.lblVersion.Text = "版本：v1.1.1 定制版";
+            this.lblVersion.Text = "版本：v1.1.1";
             // 
             // lblAppName
             // 
@@ -792,21 +796,56 @@ namespace GarbageCleaner
             // tabPageDonate
             // 
             this.tabPageDonate.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPageDonate.Controls.Add(this.lblNotice);
+            this.tabPageDonate.Controls.Add(this.lblDonateLink);
+            this.tabPageDonate.Controls.Add(this.lblDonateDesc);
+            this.tabPageDonate.Controls.Add(this.PictureBoxDonate);
             this.tabPageDonate.Location = new System.Drawing.Point(4, 33);
             this.tabPageDonate.Name = "tabPageDonate";
             this.tabPageDonate.Size = new System.Drawing.Size(670, 427);
             this.tabPageDonate.TabIndex = 3;
             this.tabPageDonate.Text = "支持我们";
             // 
-            // lblNotice
+            // lblDonateLink
             // 
-            this.lblNotice.AutoSize = true;
-            this.lblNotice.Location = new System.Drawing.Point(200, 150);
-            this.lblNotice.Name = "lblNotice";
-            this.lblNotice.Size = new System.Drawing.Size(280, 24);
-            this.lblNotice.TabIndex = 0;
-            this.lblNotice.Text = "该定制版无广告，感谢使用及支持";
+            this.lblDonateLink.AutoSize = true;
+            this.lblDonateLink.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblDonateLink.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.lblDonateLink.Location = new System.Drawing.Point(262, 250);
+            this.lblDonateLink.Name = "lblDonateLink";
+            this.lblDonateLink.Size = new System.Drawing.Size(136, 24);
+            this.lblDonateLink.TabIndex = 2;
+            this.lblDonateLink.TabStop = true;
+            this.lblDonateLink.Text = "访问爱发电主页";
+            this.lblDonateLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblDonateLink_LinkClicked);
+            // 
+            // lblDonateDesc
+            // 
+            this.lblDonateDesc.AutoSize = true;
+            this.lblDonateDesc.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.lblDonateDesc.Location = new System.Drawing.Point(115, 210);
+            this.lblDonateDesc.Name = "lblDonateDesc";
+            this.lblDonateDesc.Size = new System.Drawing.Size(452, 27);
+            this.lblDonateDesc.TabIndex = 1;
+            this.lblDonateDesc.Text = "如果本工具对您有帮助，欢迎支持我们继续开发！";
+            this.lblDonateDesc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // PictureBoxDonate
+            // 
+            this.PictureBoxDonate.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBoxDonate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureBoxDonate.Image = global::GarbageCleaner.Properties.Resources.DonateButton;
+            this.PictureBoxDonate.Location = new System.Drawing.Point(250, 100);
+            this.PictureBoxDonate.Name = "PictureBoxDonate";
+            this.PictureBoxDonate.Size = new System.Drawing.Size(160, 90);
+            this.PictureBoxDonate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxDonate.TabIndex = 0;
+            this.PictureBoxDonate.TabStop = false;
+            this.PictureBoxDonate.Click += new System.EventHandler(this.PictureBoxDonate_Click);
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.WorkerSupportsCancellation = true;
             // 
             // Form1
             // 
@@ -830,6 +869,7 @@ namespace GarbageCleaner
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.tabPageDonate.ResumeLayout(false);
             this.tabPageDonate.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxDonate)).EndInit();
             this.ResumeLayout(false);
 
         }

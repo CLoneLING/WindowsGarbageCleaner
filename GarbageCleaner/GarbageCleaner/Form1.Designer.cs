@@ -31,7 +31,10 @@
         private System.Windows.Forms.Label lblVersion;
         private System.Windows.Forms.LinkLabel linkEmail;
         private System.Windows.Forms.Label lblAuthor;
-        private System.Windows.Forms.Label lblNotice;
+        private System.Windows.Forms.PictureBox PictureBoxDonate;
+        private System.Windows.Forms.Label lblDonateDesc;
+        private System.Windows.Forms.LinkLabel lblDonateLink;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
 
         // 主控件
 
