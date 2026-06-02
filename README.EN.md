@@ -3,7 +3,7 @@
 [![Passing](https://img.shields.io/badge/Cleaner-Passing-green/?logo=github)](https://github.com/CLoneLING/WindowsGarbageCleaner)
 [![Support](https://img.shields.io/badge/Windows-Supported-green/?logo=data:image/svg+xml;charset=utf-8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPgo8c3ZnIHdpZHRoPSI4MDBweCIgaGVpZ2h0PSI4MDBweCIgdmlld0JveD0iMCAwIDE2IDE2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiPjxwYXRoIGZpbGw9IiNGMzUzMjUiIGQ9Ik0xIDFoNi41djYuNUgxVjF6Ii8+PHBhdGggZmlsbD0iIzgxQkMwNiIgZD0iTTguNSAxSDE1djYuNUg4LjVWMXoiLz48cGF0aCBmaWxsPSIjMDVBNkYwIiBkPSJNMSA4LjVoNi41VjE1SDFWOC41eiIvPjxwYXRoIGZpbGw9IiNGRkJBMDgiIGQ9Ik04LjUgOC41SDE1VjE1SDguNVY4LjV6Ii8+PC9zdmc+)](https://github.com/CLoneLING/WindowsGarbageCleaner)
 
-It is a tool that can clean the garbage files from Windows system, like temp, prefetch cache and so on.
+It is a tool that can clean the garbage files from Windows system, like temp, prefetch cache and so on.<br>
 Support languages: Chinese(app), English
 
 ## What has been updated?
