@@ -3,3 +3,13 @@
 [![Passing](https://img.shields.io/badge/Cleaner-passing-green/?style=for-the-badge&logo=github)](https://github.com/CLoneLING/WindowsGarbageCleaner)
 
 It is a tool that can clean the garbage files from Windows system,like temp ,prefetch cache and so on.
+
+## What has been updated?
+
+- ## Release
+ - ### Version 1.0.0
+  - Basic design script
+ - ### Version 1.1.0beta
+  - All Designs rebuild.
+  - Create new UI
+  - Refactor using C#
