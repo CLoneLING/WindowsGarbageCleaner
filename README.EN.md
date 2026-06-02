@@ -24,3 +24,7 @@ These are the release notes for all published versions updates. →
   Release notes for the beta versions that have been published.
  - #### Version 1.1.0.beta3
   1. Add greeting. It can show your username.
+ - #### Version 1.1.0.beta5
+  1. Optimized the UI display to adapt to different screen aspect ratios.
+  2. Fixed an issue where the progress bar would not fill completely due to certain files being unprocessable.
+  3. Applied new icons throughout the application.
