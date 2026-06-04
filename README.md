@@ -7,7 +7,7 @@
 这是一款可以清理Windows系统中垃圾文件的工具，如Temp临时文件、Prefetch缓存等.
 
 支持语言：简体中文, [English](README.EN.md)
-<br>
+<br><br>
 ![UI](mmexport1780412604316.jpg)
 ## 更新了什么？
 
