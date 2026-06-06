@@ -8,7 +8,7 @@
 
 支持语言：简体中文, [English](README.EN.md)
 <br><br>
-    ![UI](UI_main.jpg)
+    ![UI](UI_main.png)
 ## 更新了什么？
 
 这些是所有已发布版本更新的内容说明. →
